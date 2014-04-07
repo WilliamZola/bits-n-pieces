@@ -78,5 +78,3 @@ covVersion=`$cov-build --ident | head -1 | cut -d" " -f 5`
 if [ "$PACKAGE" == "mongo" ]; then
     CVA=" --cva "
 fi
-
-$cov-commit-defects $V --dir $intDir --host cov1.bci.10gen.cc --port 8080 --user asya --password coverity --stream $PACKAGE --description "$build-$covVersion-$VERSION" --version "$VERSION " --target linux64 --strip-path $srcDir
